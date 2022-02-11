@@ -33,5 +33,5 @@
 
 .movieCard:hover > .movieInfo {
     transition: 500ms;
-    border-bottom: 1px solid rgba(210, 0, 46, 0.84);
+    border-bottom: 2px solid rgba(210, 0, 46, 0.84);
 }
