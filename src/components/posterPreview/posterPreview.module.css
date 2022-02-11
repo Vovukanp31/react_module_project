@@ -1,4 +1,5 @@
 .image > img {
     width: 100%;
     border-radius: 5px;
+    -webkit-user-drag: none;
 }

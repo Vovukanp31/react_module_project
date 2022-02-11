@@ -42,6 +42,7 @@
 
 .header:hover .actionPart > img {
     width: 60px;
+    -webkit-user-drag: none;
 }
 
 .headerBtn > button:hover, .actionPart > img:hover {
