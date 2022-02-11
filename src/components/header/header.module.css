@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
 }
 
 .header:hover {
@@ -41,17 +41,17 @@
 }
 
 .header:hover .actionPart > img {
-    width: 68px;
+    width: 60px;
 }
 
-.headerBtn > button:hover {
+.headerBtn > button:hover, .actionPart > img:hover {
     transition: 500ms;
     box-shadow: 0 -5px 9px -2px rgba(34, 60, 80, 0.6);
     background: rgb(0, 151, 180);
     border: 0;
 }
 
-.headerBtn > button:not(:hover), .header:hover img, .header:not(:hover) img {
+.headerBtn > button:not(:hover), .header:hover img, .header:not(:hover) img, .actionPart > img:not(:hover) {
     transition: 500ms;
 }
 .actionPart {
@@ -63,4 +63,5 @@
 .actionPart > img {
     width: 35px;
     border-radius: 2px;
+    cursor: pointer;
 }
