@@ -1,0 +1,37 @@
+.movieCard, .movieCard:not(:hover) {
+    border: 2px solid gray;
+    background: rgb(173,173,173);
+    background: linear-gradient(196deg, rgb(217, 217, 217) 0%, rgba(253,253,253,1) 95%);;
+    border-radius: 5px;
+    padding: 1vh;
+    margin: 1vh;
+    width: 20vw;
+    height: 90vh;
+    block-size: border-box;
+    box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+    cursor: pointer;
+}
+
+.movieCard:hover {
+    transition: 500ms;
+    border: 2px solid rgba(210, 0, 46, 0.84);
+    padding: 1vw;
+    margin: 0;
+    width: 21vw;
+    height: 91vh;
+    box-shadow: 0 5px 10px 5px rgba(34, 60, 80, 0.36);
+}
+
+.movieCard:not(:hover), .movieCard:not(:hover) > .movieInfo {
+    transition: 500ms;
+}
+
+.movieInfo {
+    border-bottom: 1px solid gray;
+    height: 30%;
+}
+
+.movieCard:hover > .movieInfo {
+    transition: 500ms;
+    border-bottom: 1px solid rgba(210, 0, 46, 0.84);
+}

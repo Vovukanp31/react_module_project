@@ -1,0 +1,65 @@
+.header, .header:not(:hover){
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: rgb(121,9,34);
+    background: linear-gradient(150deg, rgba(121,9,34,0.8434543395310306) 37%, rgba(0,212,255,0.8603082721153001) 100%);
+    box-shadow: 0 5px 5px -5px rgba(34, 60, 80, 0.6);
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.header:hover {
+    height: 70px;
+    transition: 500ms;
+    box-shadow: 0 5px 5px -2px rgba(34, 60, 80, 0.6);
+}
+
+.header:not(:hover), .headerBtn > button {
+    transition: 500ms;
+    font-size: 16px;
+    padding: 4px;
+}
+
+.headerBtn > button, .headerBtn > button:not(:hover) {
+    background: rgba(84, 6, 23, 0.84);
+    border: 0;
+}
+
+.header:hover > .actionPart > .headerBtn > button, .header:hover {
+    font-size: 22px;
+    padding: 8px;
+}
+
+.header:hover img {
+    width: 45px;
+}
+
+.header:hover .actionPart > img {
+    width: 68px;
+}
+
+.headerBtn > button:hover {
+    transition: 500ms;
+    box-shadow: 0 -5px 9px -2px rgba(34, 60, 80, 0.6);
+    background: rgb(0, 151, 180);
+    border: 0;
+}
+
+.headerBtn > button:not(:hover), .header:hover img, .header:not(:hover) img {
+    transition: 500ms;
+}
+.actionPart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+}
+.actionPart > img {
+    width: 35px;
+}
