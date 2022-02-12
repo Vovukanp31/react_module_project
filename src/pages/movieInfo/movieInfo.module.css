@@ -1,0 +1,63 @@
+.backgroundImage {
+    background: no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    backdrop-filter: brightness(30%) grayscale(100%);
+    -webkit-backdrop-filter:brightness(30%) grayscale(100%);
+}
+
+@media only screen and (max-device-width: 1920px) {
+    .backgroundImage {
+        background-attachment: scroll;
+    }
+}
+
+.movieDetailsContainer {
+    color: white;
+    padding-top: 80px;
+    min-height: 100vh;
+    backdrop-filter: brightness(30%) grayscale(100%);
+    -webkit-backdrop-filter:brightness(30%) grayscale(100%);
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+
+.title, .phRate  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.title > span {
+    font-size: 50px;
+}
+
+.phRate img {
+    width: 30vw;
+    box-shadow: 0 0 10px 3px rgba(142, 0, 32, 0.47);
+    margin: 1vh;
+}
+
+.phRate span {
+    padding: 0.5vw;
+    border-radius: 5px;
+}
+
+.basicInfo {
+
+}
+
+.videoContainer {
+
+}
+
+.overview {
+
+}

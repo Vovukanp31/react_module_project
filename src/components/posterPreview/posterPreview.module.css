@@ -1,5 +1,9 @@
 .image > img {
-    width: 100%;
+   max-width: 100%;
     border-radius: 5px;
     -webkit-user-drag: none;
 }
+
+.image {
+ max-width: 100%;
+ }

@@ -4,7 +4,8 @@ import {moviesService} from "../../services/movies.services";
 const initialState = {
     movies: [],
     status: null,
-    error: null
+    error: null,
+    movieDetails: {}
 }
 
 export const getPopularMovies = createAsyncThunk(
@@ -13,6 +14,18 @@ export const getPopularMovies = createAsyncThunk(
         try {
             const movies = await moviesService.getPopularMovies()
             return movies
+        } catch (e) {
+            return rejectWithValue(e.message)
+        }
+    }
+)
+
+export const getMovieDetails = createAsyncThunk(
+    'movieDetails/getMovieInfo',
+    async (id, {rejectWithValue}) => {
+        try {
+            const movieDetails = await moviesService.getMovieInfo(id)
+            return movieDetails
         } catch (e) {
             return rejectWithValue(e.message)
         }
@@ -39,6 +52,19 @@ const moviesSlice = createSlice({
 
         [getPopularMovies.rejected]: (state, action) => {
 state.error = action.payload
+        },
+
+        [getMovieDetails.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+
+        [getMovieDetails.fulfilled]: (state, action) => {
+            state.movieDetails = action.payload;
+        },
+
+        [getMovieDetails.rejected]: (state, action) => {
+            state.error = action.payload
         }
     }
 });

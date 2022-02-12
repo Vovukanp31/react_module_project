@@ -2,23 +2,29 @@ import React from 'react';
 
 import PosterPreview from "../posterPreview/PosterPreview";
 import css from './movieListCard.module.css'
+import StarsRating from "../starsRating/StarsRating";
+import {useNavigate} from "react-router-dom";
 
-const MovieListCard = ({movie:{id,adult, original_language, original_title, overview, poster_path, release_date, vote_average}}) => {
+const MovieListCard = ({movie}) => {
 
-    let overviewText =(title, maxChar) => title.slice(0, maxChar) + (title.length > maxChar ? "..." : "");
+    const {id, title, overview, poster_path, vote_average} = movie;
+
+    let overviewText = (title, maxChar) => title.slice(0, maxChar) + (title.length > maxChar ? "..." : "");
+
+    const movieInfo = useNavigate()
 
     return (
-        <div className={css.movieCard}>
+        <div className={css.movieCard} onClick={() => { window.scrollTo(0, 0); movieInfo(`/${id}/movieDetails`)}}>
 
-            <PosterPreview posterTitle={poster_path} movieTitle={original_title}/>
+            <PosterPreview posterTitle={poster_path} movieTitle={title}/>
 
             <div className={css.movieInfo}>
-                <p><strong>{original_title}</strong></p>
-                <p>{overviewText(overview, 120)}</p>
+                <span><strong>{title}</strong></span>
+                <span>{overviewText(overview, 86)}</span>
             </div>
 
             <div className={css.movieRate}>
-
+                <StarsRating rating={vote_average}/>
             </div>
 
         </div>
