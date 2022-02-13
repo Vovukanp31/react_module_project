@@ -1,0 +1,35 @@
+.genreHeader {
+    text-align: center;
+    padding: 2vh;
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+
+.badgesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 5px;
+    padding: 1vh;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.71);
+    backdrop-filter: blur(2px);
+}
+
+.badge, .badge:not(:hover) {
+    color: #ababab;
+    font-size: 14px;
+    padding: 0.5vh;
+    text-align: center;
+    width: 100%;
+    border: 1px solid #790922D7;
+    border-radius: 5px;
+    transition: 500ms;
+}
+
+.badge:hover {
+    border: 1px solid #0097B4D6;
+    color: white;
+    transition: 500ms;
+}

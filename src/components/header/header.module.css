@@ -58,6 +58,26 @@
 .headerBtn > button:not(:hover), .header:hover img, .header:not(:hover) img, .actionPart > img:not(:hover) {
     transition: 500ms;
 }
+
+.headerBtn a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(0, 151, 180);
+    margin: 1vh;
+    border-radius: 5px;
+}
+
+.headerBtn > div {
+    text-align: center;
+    max-height: 50vh;
+    overflow-y: scroll;
+    background-color: rgba(180, 180, 180, 0.89);
+}
+
+.headerBtn > div::-webkit-scrollbar {
+    display: none;
+}
 .actionPart {
     display: flex;
     justify-content: center;

@@ -1,0 +1,9 @@
+.moviesContainer {
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 5vh;
+    row-gap: 5vh;
+}

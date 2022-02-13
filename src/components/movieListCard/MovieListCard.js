@@ -11,7 +11,7 @@ const MovieListCard = ({movie}) => {
 
     let overviewText = (title, maxChar) => title.slice(0, maxChar) + (title.length > maxChar ? "..." : "");
 
-    const movieInfo = useNavigate()
+    const movieInfo = useNavigate();
 
     return (
         <div className={css.movieCard} onClick={() => { window.scrollTo(0, 0); movieInfo(`/${id}/movieDetails`)}}>

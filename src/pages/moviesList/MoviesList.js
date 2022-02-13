@@ -12,12 +12,12 @@ const {movies, status, error} = useSelector(state => state.movies);
 
 useEffect(() => {
     dispatch(getPopularMovies())
-}, [])
-console.log(movies)
+}, [dispatch])
+
     return (
         <div className={css.moviesContainer}>
             {error && <h1>{error}</h1>}
-            {movies.map(movie => { return <MovieListCard key={movie.id} movie={movie}/>})}
+            {movies.map(movie => <MovieListCard key={movie.id} movie={movie}/>)}
             <Outlet/>
         </div>
     );
