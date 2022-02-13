@@ -17,7 +17,7 @@ const GenresDropdown = () => {
     return (
         <div>
             {error && alert(error)}
-                {genres.map(genre => <Link onClick={() => { window.scrollTo(0, 0)}} id={genre.id} to={`/genre/${genre.id}`}>{genre.name}</Link>)}
+                {genres.map(({id, name}) => <Link key={id} onClick={() => { window.scrollTo(0, 0)}} id={id} to={`/genre/${id}`}>{name}</Link>)}
         </div>
     );
 };

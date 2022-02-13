@@ -59,16 +59,23 @@
     transition: 500ms;
 }
 
-.headerBtn a {
+.headerBtn a, .headerBtn a:not(:hover) {
     display: block;
     text-decoration: none;
     color: white;
     background-color: rgb(0, 151, 180);
-    margin: 1vh;
-    border-radius: 5px;
+    margin: 1.5vh;
+    border-radius: 4px;
+    transition: 400ms;
+}
+
+.headerBtn a:hover {
+ transition: 400ms;
+    background-color: rgba(210, 0, 46, 0.84);
 }
 
 .headerBtn > div {
+    cursor: pointer;
     text-align: center;
     max-height: 50vh;
     overflow-y: scroll;

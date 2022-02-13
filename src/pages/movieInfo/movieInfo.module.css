@@ -93,16 +93,26 @@ position: relative;
     row-gap: 5px;
 }
 
+.rating {
+    cursor: default;
+}
+
+.runtime {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
 .releaseDate > span {
     color: rgb(0, 151, 180);
     font-weight: bold;
 }
 
 .budget, .releaseDate {
-    color: #dadada;
+    color: rgba(225, 225, 225, 0.88);
     padding: 1vh;
     border-radius: 5px;
-    background-color: rgba(66, 66, 66, 0.6);
+    background-color: rgba(54, 54, 54, 0.6);
     backdrop-filter: blur(2px);
     width: 100%;
 }
@@ -119,6 +129,7 @@ position: relative;
 .overview {
     background-color: rgba(0, 0, 0, 0.71);
     padding: 10vh;
+    width: 100%;
 }
 
 .overview > div {
@@ -126,7 +137,7 @@ position: relative;
     padding: 10px;
     border-radius: 5px;
     font-size: 20px;
-    background-color: rgba(66, 66, 66, 0.6);
+    background-color: rgba(54, 54, 54, 0.6);
 }
 
 .overview > span {

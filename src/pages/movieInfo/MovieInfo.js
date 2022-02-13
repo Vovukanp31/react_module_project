@@ -7,6 +7,7 @@ import {getMovieDetails} from "../../store/slices/movies.slice";
 import StarsRating from "../../components/starsRating/StarsRating";
 import PosterPreview from "../../components/posterPreview/PosterPreview";
 import GenresBadges from "../../components/genresBadges/GenresBadges";
+import MovieVideos from "../../components/movieVideos/MovieVideos";
 
 const MovieInfo = () => {
 
@@ -15,20 +16,10 @@ const MovieInfo = () => {
     const {movieDetails, status, error} = useSelector(state => state.movies);
 
     const {
-        backdrop_path,
-        budget,
-        genres,
-        homepage,
-        title,
-        overview,
-        poster_path,
-        release_date,
-        runtime,
-        vote_average
+        backdrop_path, budget, genres, homepage, title, overview, poster_path, release_date, runtime, vote_average
     } = movieDetails;
 
     const dispatch = useDispatch();
-    console.log(movieDetails)
 
     useEffect(() => {
         dispatch(getMovieDetails(id))
@@ -55,11 +46,13 @@ const MovieInfo = () => {
 
                         </div>
 
-                        {vote_average && <span><StarsRating rating={vote_average}/></span>}
+                        {vote_average && <span className={css.rating}><StarsRating rating={vote_average}/></span>}
 
                         <div className={css.overview}>
                             <div>{overview}</div>
-                            <span>Runtime: {runtime} min.</span></div>
+                            <span className={css.runtime}>Runtime: {runtime} min.</span></div>
+
+                        <div className={css.videoContainer}><MovieVideos id={id}/></div>
 
                         <div className={css.relBud}>
 
@@ -67,16 +60,10 @@ const MovieInfo = () => {
                             {budget ? <div className={css.budget}>Film
                                     budget: <span>{new Intl.NumberFormat().format(budget)} $</span></div> :
                                 <div className={css.budget}>Haven't information about movie budget</div>}
-
                         </div>
-
-
                     </div>
-
                 </div>
-
             </div>
-
             <Outlet/>
         </div>
     );

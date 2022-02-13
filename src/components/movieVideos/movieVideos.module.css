@@ -1,0 +1,12 @@
+.videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+}
+
+.videoContainer > div {
+    width: 25vw;
+}
