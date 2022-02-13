@@ -50,13 +50,14 @@ const MovieInfo = () => {
 
                         <div className={css.overview}>
                             <div>{overview}</div>
-                            <span className={css.runtime}>Runtime: {runtime} min.</span></div>
+                        </div>
 
                         <div className={css.videoContainer}><MovieVideos id={id}/></div>
 
                         <div className={css.relBud}>
 
                             <div className={css.releaseDate}> Release date: <span>{release_date}</span></div>
+                            <div className={css.runtime}>Runtime: <span>{runtime} min.</span></div>
                             {budget ? <div className={css.budget}>Film
                                     budget: <span>{new Intl.NumberFormat().format(budget)} $</span></div> :
                                 <div className={css.budget}>Haven't information about movie budget</div>}

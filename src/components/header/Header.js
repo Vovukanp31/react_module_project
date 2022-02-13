@@ -17,7 +17,7 @@ const Header = () => {
         <div className={css.header}>
 
             <div className={css.actionPart}>
-                <img src="https://i.postimg.cc/YCJGT1MX/image.png" alt="webLogo" onClick={() => {
+                <img src="https://i.postimg.cc/W1yqVHJV/image.png" alt="webLogo" onClick={() => {
                     homepage('/');
                 }}/>
 

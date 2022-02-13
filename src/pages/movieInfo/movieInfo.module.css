@@ -91,16 +91,11 @@ position: relative;
     justify-content: center;
     align-items: center;
     row-gap: 5px;
+    box-shadow: 0 0 10px 9px rgba(0, 212, 255, 0.2);
 }
 
 .rating {
     cursor: default;
-}
-
-.runtime {
-    display: block;
-    text-align: center;
-    font-weight: bold;
 }
 
 .releaseDate > span {
@@ -108,7 +103,13 @@ position: relative;
     font-weight: bold;
 }
 
-.budget, .releaseDate {
+.runtime > span {
+    color: white;
+    font-weight: bold;
+}
+
+.budget, .releaseDate, .runtime {
+    text-align: center;
     color: rgba(225, 225, 225, 0.88);
     padding: 1vh;
     border-radius: 5px;
@@ -122,24 +123,19 @@ position: relative;
     font-weight: bold;
 }
 
-.videoContainer {
-
-}
-
 .overview {
     background-color: rgba(0, 0, 0, 0.71);
     padding: 10vh;
     width: 100%;
+    cursor: default;
 }
 
 .overview > div {
+    color: white;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
     font-size: 20px;
-    background-color: rgba(54, 54, 54, 0.6);
-}
-
-.overview > span {
-    color: rgba(192, 0, 40, 0.84);
+    background-color: rgba(0, 0, 0, 0.76);
+    box-shadow: 0 0 10px 9px rgba(0, 212, 255, 0.2);
 }

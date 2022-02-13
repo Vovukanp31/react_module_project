@@ -16,10 +16,12 @@ const MovieVideos = ({id}) => {
 
     let linksObj = movieVideos.slice(0,3);
 
+    const filteredVideos = linksObj.filter(video => video);
+
     return (
         <div className={css.videoContainer}>
             {error && <h1>{Error}</h1>}
-            {linksObj.map( ({key, id}) => <div key={id}><iframe src={`https://www.youtube.com/embed/${key}`}></iframe></div>)}
+            {filteredVideos.map( ({key, id, title}) => <iframe key={id} title={title} src={`https://www.youtube.com/embed/${key}`}></iframe>)}
         </div>
     );
 };
