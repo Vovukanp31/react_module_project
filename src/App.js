@@ -11,9 +11,9 @@ function App() {
     <div className="App">
    <Routes>
        <Route path={'/'} element={<Layout/>}>
-           <Route index element={<Navigate to={'moviesPage'}/>}/>
+           <Route index element={<Navigate to={'movies?page=1'}/>}/>
 
-           <Route path={'moviesPage'} element={<MoviesList/>}/>
+           <Route path={'movies'} element={<MoviesList/>}/>
            <Route path={':id/movieDetails'} element={<MovieInfo/>}/>
            <Route path={'genre/:id'} element={<GenreMovieList/>}/>
        </Route>

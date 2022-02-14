@@ -7,14 +7,14 @@ const initialState = {
     error: null,
     movieGenres: [],
     movieDetails: {},
-    movieVideos: []
+    movieVideos: [],
 }
 
 export const getPopularMovies = createAsyncThunk(
     'movies/getPopularMovies',
-    async (_, {rejectWithValue}) => {
+    async (page, {rejectWithValue}) => {
         try {
-            const movies = await moviesService.getPopularMovies()
+            const movies = await moviesService.getPopularMovies(page)
             return movies
         } catch (e) {
             return rejectWithValue(e.message)
@@ -64,7 +64,9 @@ const moviesSlice = createSlice({
 
     initialState,
 
-    reducers: {},
+    reducers: {
+
+    },
 
     extraReducers: {
         [getPopularMovies.pending]: (state) => {
