@@ -4,6 +4,7 @@ import App from './App';
 import {Provider} from "react-redux";
 import store from "./store/store";
 import {BrowserRouter} from "react-router-dom";
+import {ThemeSwitcher} from './components/themeSwitcher/ThemeSwitcher'
 
 ReactDOM.render(
     <React.StrictMode>
@@ -13,5 +14,5 @@ ReactDOM.render(
             </BrowserRouter>
         </Provider>
     </React.StrictMode>,
-    document.getElementById('root')
+    ReactDOM.render(<ThemeSwitcher/>, document.getElementById('root'))
 );

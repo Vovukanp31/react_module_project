@@ -12,7 +12,7 @@ const MovieVideos = ({id}) => {
     
     useEffect(() => {
         dispatch(getMovieVideos(id))
-    }, [id, dispatch])
+    }, [dispatch])
 
     let linksObj = movieVideos.slice(0,3);
 
