@@ -15,6 +15,9 @@ const MoviesList = () => {
     console.log(searchParams)
 
     useEffect(() => {
+        if (!searchParams.get('page')) {
+            setSearchParams({page: '1'})
+        }
 
         const page = searchParams.get('page');
 
