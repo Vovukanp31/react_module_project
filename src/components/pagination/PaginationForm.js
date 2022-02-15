@@ -20,55 +20,67 @@ const PaginationForm = () => {
         <>
             <Pagination>
                 <Pagination.First onClick={() => {
+                    scroll()
                     changeNumberOfPages(1);
-                    scroll()
                 }} disabled={currentNumberOfPages <= 1}/>
+
                 <Pagination.Prev onClick={() => {
+                    scroll()
                     changeNumberOfPages(currentNumberOfPages - 1);
-                    scroll()
                 }} disabled={currentNumberOfPages <= 1}/>
+
                 <Pagination.Item onClick={() => {
-                    changeNumberOfPages(currentNumberOfPages - 10);
                     scroll()
+                    changeNumberOfPages(currentNumberOfPages - 10);
                 }}>{(currentNumberOfPages > 10 && currentNumberOfPages - 10) || '-'}</Pagination.Item>
                 <Pagination.Ellipsis disabled/>
 
+
                 <Pagination.Item onClick={() => {
-                    changeNumberOfPages(currentNumberOfPages - 2);
                     scroll()
+                    changeNumberOfPages(currentNumberOfPages - 2);
                 }}
                                  disabled={currentNumberOfPages <= 2}>{(currentNumberOfPages > 2 && currentNumberOfPages - 2) || '-'}</Pagination.Item>
+
                 <Pagination.Item onClick={() => {
-                    changeNumberOfPages(currentNumberOfPages - 1);
                     scroll()
+                    changeNumberOfPages(currentNumberOfPages - 1);
                 }}
                                  disabled={currentNumberOfPages <= 1}>{(currentNumberOfPages > 1 && currentNumberOfPages - 1) || '-'}</Pagination.Item>
+
                 <Pagination.Item active>{currentNumberOfPages}</Pagination.Item>
+
                 <Pagination.Item onClick={() => {
-                    changeNumberOfPages(currentNumberOfPages + 1);
                     scroll()
+                    changeNumberOfPages(currentNumberOfPages + 1);
                 }}
                                  disabled={currentNumberOfPages >= 500}>{(currentNumberOfPages < 500 && currentNumberOfPages + 1) || '-'}</Pagination.Item>
+
                 <Pagination.Item onClick={() => {
-                    changeNumberOfPages(currentNumberOfPages + 2);
                     scroll()
+                    changeNumberOfPages(currentNumberOfPages + 2);
                 }}
                                  disabled={currentNumberOfPages >= 499}>{(currentNumberOfPages < 499 && currentNumberOfPages + 2) || '-'}</Pagination.Item>
 
+
                 <Pagination.Ellipsis disabled/>
+
                 <Pagination.Item onClick={() => {
-                    changeNumberOfPages(currentNumberOfPages + 10);
                     scroll()
+                    changeNumberOfPages(currentNumberOfPages + 10);
                 }}
                                  disabled={currentNumberOfPages >= 490}>{(currentNumberOfPages <= 490 && currentNumberOfPages + 10) || '-'}</Pagination.Item>
+
                 <Pagination.Next onClick={() => {
+                    scroll()
                     changeNumberOfPages(currentNumberOfPages + 1);
-                    scroll()
                 }} disabled={currentNumberOfPages === 500}/>
+
                 <Pagination.Last onClick={() => {
-                    changeNumberOfPages(500);
                     scroll()
+                    changeNumberOfPages(500);
                 }}/>
+
             </Pagination>
         </>
     );
