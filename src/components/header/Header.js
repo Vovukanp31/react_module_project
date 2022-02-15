@@ -22,7 +22,7 @@ const Header = () => {
                 }}/>
 
                 <DropdownButton id="dropdown-basic-button" title="Genres" className={css.headerBtn}>
-                        <GenresDropdown/>
+                    <GenresDropdown/>
                 </DropdownButton>
 
             </div>

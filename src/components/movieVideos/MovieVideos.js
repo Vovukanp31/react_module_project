@@ -12,16 +12,17 @@ const MovieVideos = ({id}) => {
     
     useEffect(() => {
         dispatch(getMovieVideos(id))
-    }, [dispatch])
+    }, [id, dispatch])
 
-    let linksObj = movieVideos.slice(0,3);
+    const linksObj = movieVideos.slice(0,3);
+    console.log(id)
 
-    const filteredVideos = linksObj.filter(video => video);
+    console.log(movieVideos);
 
     return (
         <div className={css.videoContainer}>
             {error && <h1>{Error}</h1>}
-            {filteredVideos.map( ({key, id, title}) => <iframe key={id} title={title} src={`https://www.youtube.com/embed/${key}`}></iframe>)}
+            {linksObj.map( ({key, id, title}) => <iframe key={id} title={title} src={`https://www.youtube.com/embed/${key}`}></iframe>)}
         </div>
     );
 };

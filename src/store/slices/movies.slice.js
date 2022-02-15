@@ -7,7 +7,7 @@ const initialState = {
     error: null,
     movieGenres: [],
     movieDetails: {},
-    movieVideos: [],
+    movieVideos: []
 }
 
 export const getPopularMovies = createAsyncThunk(
@@ -65,9 +65,7 @@ const moviesSlice = createSlice({
 
     initialState,
 
-    reducers: {
-
-    },
+    reducers: {},
 
     extraReducers: {
         [getPopularMovies.pending]: (state) => {
@@ -76,6 +74,7 @@ const moviesSlice = createSlice({
         },
         [getPopularMovies.fulfilled]: (state, action) => {
             state.movies = action.payload;
+            state.status = null
         },
         [getPopularMovies.rejected]: (state, action) => {
             state.error = action.payload
@@ -88,6 +87,7 @@ const moviesSlice = createSlice({
         },
         [getMovieDetails.fulfilled]: (state, action) => {
             state.movieDetails = action.payload;
+            state.status = null;
         },
         [getMovieDetails.rejected]: (state, action) => {
             state.error = action.payload
@@ -100,10 +100,12 @@ const moviesSlice = createSlice({
         },
         [getMoviesByGenre.fulfilled]: (state, action) => {
             state.movieGenres = action.payload;
+            state.status = null;
         },
         [getMoviesByGenre.rejected]: (state, action) => {
             state.error = action.payload;
         },
+
 
         [getMovieVideos.pending]: (state) => {
             state.status = 'pending';
@@ -111,9 +113,10 @@ const moviesSlice = createSlice({
         },
         [getMovieVideos.fulfilled]: (state, action) => {
             state.movieVideos = action.payload;
+            state.status = null;
         },
         [getMovieVideos.rejected]: (state, action) => {
-            state.error = action.payload
+            state.error = action.payload;
         }
     }
 });

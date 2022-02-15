@@ -6,6 +6,7 @@ import css from './genreMovieList.module.css'
 import MovieListCard from "../../components/movieListCard/MovieListCard";
 import {Outlet, useParams, useSearchParams} from "react-router-dom";
 import PaginationForm from "../../components/pagination/PaginationForm";
+import Loader from "../../components/loader/Loader";
 
 const GenreMovieList = () => {
 
@@ -28,10 +29,12 @@ const GenreMovieList = () => {
         dispatch(getMoviesByGenre({id, page}))
     }, [id, searchParams, dispatch])
 
+    const statusHandler = status === 'pending' && <Loader/>;
+
     return (
         <div className={css.moviesContainer}>
             {error && <h1>{error}</h1>}
-            {movieGenres.map(movie => <MovieListCard key={movie.id} movie={movie}/>)}
+            {statusHandler || movieGenres.map(movie => <MovieListCard key={movie.id} movie={movie}/>)}
             <Outlet/>
             <PaginationForm/>
         </div>
