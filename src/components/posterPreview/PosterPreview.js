@@ -8,7 +8,8 @@ const PosterPreview = ({posterTitle, movieTitle}) => {
 
     return (
         <div className={css.image}>
-            <img src={(posterTitle && `https://image.tmdb.org/t/p/w500${posterTitle}`) || noPageImg} alt={`${movieTitle}`}/>
+            <img src={(posterTitle && `https://image.tmdb.org/t/p/w500${posterTitle}`) || noPageImg}
+                 alt={`${movieTitle}`}/>
         </div>
     );
 };

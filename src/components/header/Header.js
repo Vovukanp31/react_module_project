@@ -1,8 +1,7 @@
 import React from 'react';
-
+import {useNavigate} from "react-router-dom";
 import {DropdownButton} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useNavigate} from "react-router-dom";
 
 import css from './header.module.css';
 import UserInfo from "../userInfo/UserInfo";

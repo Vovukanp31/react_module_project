@@ -1,7 +1,7 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 import css from './genresBadges.module.css';
-import {Link} from "react-router-dom";
 
 
 const GenresBadges = ({genres}) => {

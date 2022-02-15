@@ -1,28 +1,30 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 
-import {getMovieVideos} from "../../store/slices/movies.slice";
+
 import css from './movieVideos.module.css'
+import {getMovieVideos} from "../../store/slices/video.slice";
+import YotubeVideosLoader from "../loaders/youtubeVideosLoader/YoutubeVideosLoader";
 
 const MovieVideos = ({id}) => {
 
-    const {movieVideos, status, error} = useSelector(state => state.movies);
+    const {videos, status, error} = useSelector(state => state.videos);
 
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch(getMovieVideos(id))
     }, [id, dispatch])
 
-    const linksObj = movieVideos.slice(0,3);
-    console.log(id)
+    const linksObj = videos.slice(0, 3);
 
-    console.log(movieVideos);
+    const statusHandler = status === 'pending' && <YotubeVideosLoader/>;
 
     return (
         <div className={css.videoContainer}>
             {error && <h1>{Error}</h1>}
-            {linksObj.map( ({key, id, title}) => <iframe key={id} title={title} src={`https://www.youtube.com/embed/${key}`}></iframe>)}
+            {linksObj.map(({key, id, title, name}) => statusHandler || <iframe key={id} title={title}
+                                                        src={`https://www.youtube.com/embed/${key}`}>{name}</iframe>)}
         </div>
     );
 };

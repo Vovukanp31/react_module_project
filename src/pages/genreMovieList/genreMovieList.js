@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from "react-redux";
 import {getMoviesByGenre} from "../../store/slices/movies.slice";
+import {Outlet, useParams, useSearchParams} from "react-router-dom";
 
 import css from './genreMovieList.module.css'
 import MovieListCard from "../../components/movieListCard/MovieListCard";
-import {Outlet, useParams, useSearchParams} from "react-router-dom";
 import PaginationForm from "../../components/pagination/PaginationForm";
-import Loader from "../../components/loader/Loader";
+import MoviesLoader from "../../components/loaders/moviesLoader/MoviesLoader";
 
 const GenreMovieList = () => {
 
@@ -29,7 +29,7 @@ const GenreMovieList = () => {
         dispatch(getMoviesByGenre({id, page}))
     }, [id, searchParams, dispatch])
 
-    const statusHandler = status === 'pending' && <Loader/>;
+    const statusHandler = status === 'pending' && <MoviesLoader/>;
 
     return (
         <div className={css.moviesContainer}>

@@ -7,19 +7,19 @@ import MoviesList from "./pages/moviesList/MoviesList";
 import GenreMovieList from "./pages/genreMovieList/genreMovieList";
 
 function App() {
-  return (
-    <div className="App">
-   <Routes>
-       <Route path={'/'} element={<Layout/>}>
-           <Route index element={<Navigate to={'movies?page=1'}/>}/>
+    return (
+        <div className="App">
+            <Routes>
+                <Route path={'/'} element={<Layout/>}>
+                    <Route index element={<Navigate to={'movies?page=1'}/>}/>
 
-           <Route path={'movies'} element={<MoviesList/>}/>
-           <Route path={':id/movieDetails'} element={<MovieInfo/>}/>
-           <Route path={'genre/:id'} element={<GenreMovieList/>}/>
-       </Route>
-   </Routes>
-    </div>
-  );
+                    <Route path={'movies'} element={<MoviesList/>}/>
+                    <Route path={':id/movieDetails'} element={<MovieInfo/>}/>
+                    <Route path={'genre/:id'} element={<GenreMovieList/>}/>
+                </Route>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;

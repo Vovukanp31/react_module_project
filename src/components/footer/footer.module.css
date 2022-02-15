@@ -2,9 +2,34 @@
     background: rgb(86, 6, 21);
     background: linear-gradient(300deg, rgba(86, 6, 21, 0.84) 37%, rgba(0, 125, 148, 0.86) 100%);
     width: 100%;
-    height: 5vw;
+    height: 8vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    column-gap: 5px;
     box-shadow: 0 5px 5px -5px rgba(56, 56, 56, 0.6) inset;
+    position: relative;
+}
+
+.footer, .footer a:not(:hover) {
+    transition: 300ms;
+    color: #ababab;
+}
+
+.footer a {
+    background-color: rgba(94, 94, 94, 0.55);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.footer a:hover {
+    background-color: rgba(28, 28, 28, 0.55);
+    color: #dadada;
+    transition: 300ms;
+}
+
+.apiLink {
+    position: absolute;
+    right: 10%;
 }

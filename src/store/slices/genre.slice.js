@@ -1,4 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {genreService} from "../../services/genre.services";
 
 const initialState = {
@@ -27,15 +28,15 @@ const genresSlice = createSlice({
     reducers: {},
 
     extraReducers: {
-[getPopularGenres.pending]: (state) => {
-    state.status = 'pending';
-    state.error = null;
-},
-[getPopularGenres.fulfilled]: (state, action) => {
-    state.genres = action.payload;
-},
+        [getPopularGenres.pending]: (state) => {
+            state.status = 'pending';
+            state.error = null;
+        },
+        [getPopularGenres.fulfilled]: (state, action) => {
+            state.genres = action.payload;
+        },
         [getPopularGenres.rejected]: (state, action) => {
-    state.error = action.payload;
+            state.error = action.payload;
         }
     }
 });

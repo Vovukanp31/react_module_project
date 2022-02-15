@@ -1,9 +1,9 @@
 import React from 'react';
+import {useNavigate} from "react-router-dom";
 
 import PosterPreview from "../posterPreview/PosterPreview";
 import css from './movieListCard.module.css'
 import StarsRating from "../starsRating/StarsRating";
-import {useNavigate} from "react-router-dom";
 
 const MovieListCard = ({movie}) => {
 
@@ -14,7 +14,10 @@ const MovieListCard = ({movie}) => {
     const movieInfo = useNavigate();
 
     return (
-        <div className={css.movieCard} onClick={() => { window.scrollTo(0, 0); movieInfo(`/${id}/movieDetails`)}}>
+        <div className={css.movieCard} onClick={() => {
+            window.scrollTo(0, 0);
+            movieInfo(`/${id}/movieDetails`)
+        }}>
 
             <PosterPreview posterTitle={poster_path} movieTitle={title}/>
 
