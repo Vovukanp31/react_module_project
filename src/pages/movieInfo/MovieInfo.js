@@ -52,9 +52,9 @@ const MovieInfo = () => {
 
                         {vote_average && <span className={css.rating}><StarsRating rating={vote_average}/></span>}
 
-                        <div className={css.overview}>
+                        { overview ?? <div className={css.overview}>
                             <div>{overview}</div>
-                        </div>
+                        </div>}
 
                         <div className={css.videoContainer}><MovieVideos id={id}/></div>
 
