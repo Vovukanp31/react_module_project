@@ -4,14 +4,12 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: grey;
-    border-radius: 9px;
-    border: 1px solid transparent;
+    background: #b6b6b6;
     background-clip: padding-box;
 }
 
 body::-webkit-scrollbar-thumb:hover{
-    border: 0;
+    background: grey;
 }
 
 body::-webkit-scrollbar-track {
